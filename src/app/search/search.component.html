@@ -1,0 +1,11 @@
+<!-- search.component.html -->
+<div class="search-container">
+    <input
+      type="text"
+      placeholder="Search by email..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+    <button (click)="resetSearch()">Reset</button>
+  </div>
+  

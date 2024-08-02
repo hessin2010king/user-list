@@ -1,0 +1,92 @@
+/* Grid container for the cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Basic card styling */
+.user-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Hover effect for cards */
+.user-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling the image */
+.profile-pic {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect for images */
+.user-card:hover .profile-pic {
+  opacity: 0.9;
+}
+
+/* Card content styling */
+.card-content {
+  padding: 15px;
+}
+
+/* Verification icon styling */
+.verification-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+}
+
+.verified {
+  color: green;
+}
+
+.not-verified {
+  color: red;
+}
+
+/* Card content text styling */
+.card-content h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.user-card:hover .card-content h2 {
+  color: #007bff;
+}
+
+.card-content p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Adding animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.user-card {
+  animation: slideIn 0.5s ease-out;
+}

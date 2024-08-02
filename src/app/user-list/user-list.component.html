@@ -1,0 +1,25 @@
+<!-- user-list.component.html -->
+<div class="card-grid">
+  <div *ngFor="let user of users" class="user-card">
+    <div class="card-content">
+      <img
+        [src]="user.image"
+        alt="{{ user.firstName }}'s profile picture"
+        class="profile-pic"
+      />
+      <div
+        class="verification-icon"
+        [ngClass]="{ verified: user.verified, 'not-verified': !user.verified }"
+      >
+        <i
+          class="fas"
+          [ngClass]="user.verified ? 'fa-check-circle' : 'fa-times-circle'"
+        ></i>
+      </div>
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+    </div>
+  </div>
+</div>
